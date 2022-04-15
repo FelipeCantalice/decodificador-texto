@@ -6,6 +6,14 @@ const CRIPT_WORDS = {
     'u': 'ufat',
 };
 
+const DECRIPT_WORDS = {
+    'ai': 'a',
+    'enter': 'e',
+    'imes': 'i',
+    'ober': 'o',
+    'ufat': 'u',
+};
+
 // algoritmo de criptografia
 function criptografar(texto = new String()) {
     let texto_criptografado = new String();
@@ -20,13 +28,34 @@ function criptografar(texto = new String()) {
     return texto_criptografado;
 }
 
+// trocar todas as ocorrencias de uma palavra por outra
+function replaceAll(str, find, replace) {
+    return str.replace(new RegExp(find, 'g'), replace);
+}
+
+// trocar cada palavra encontraddo
+function decriptografar(texto = new String()) {
+
+    for (let index = 0; index < 5; index++) {
+        
+        const palavra_procurar = Object.keys(DECRIPT_WORDS)[index];
+        const palavra_trocar = DECRIPT_WORDS[palavra_procurar]
+        console.log(palavra_procurar);
+        console.log(palavra_trocar);
+        texto = replaceAll(texto, palavra_procurar, palavra_trocar);
+        console.log(texto);
+    }
+    return texto;
+}
+
+
 const button_cript = document.querySelector('#btn-codificar');
 
 button_cript.addEventListener('click', function () {
     const texto = document.querySelector('#texto').value;
 
     // validar texto digirado
-    const caracter_especiais = /[^a-zA-Z0-9]/g;
+    const caracter_especiais = /[^a-z A-Z0-9]/g;
     const caracter_uppercases = /[A-Z]/g;
 
     if (texto.match(caracter_especiais)) {
@@ -46,6 +75,35 @@ button_cript.addEventListener('click', function () {
     document.querySelector('.empty-message').classList.add('hide');
     document.querySelector('#info-text').innerHTML = texto_criptografado;
 });
+
+
+const button_decript = document.querySelector('#btn-decodificar');
+
+button_decript.addEventListener('click', function () {
+    const texto = document.querySelector('#texto').value;
+
+    // validar texto digirado
+    const caracter_especiais = /[^a-z A-Z0-9]/g;
+    const caracter_uppercases = /[A-Z]/g;
+
+    if (texto.match(caracter_especiais)) {
+        alert('Por favor!\nDigite apenas letras e números.');
+        return;
+    }
+    if (texto.match(caracter_uppercases) != null) {
+        alert('Por favor!\nDigite apenas letras minúsculas.');
+        return 
+    }
+
+
+    // criptografar texto
+    const texto_descriptografado = decriptografar(texto);
+    // atualizar DOM com o texto criptografado
+    document.querySelector('.info-section').classList.remove('empty');
+    document.querySelector('.empty-message').classList.add('hide');
+    document.querySelector('#info-text').innerHTML = texto_descriptografado;
+});
+
 
 const button_clean = document.querySelector('#btn-limpar');
 
