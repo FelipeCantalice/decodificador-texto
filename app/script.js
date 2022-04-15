@@ -40,10 +40,7 @@ function decriptografar(texto = new String()) {
         
         const palavra_procurar = Object.keys(DECRIPT_WORDS)[index];
         const palavra_trocar = DECRIPT_WORDS[palavra_procurar]
-        console.log(palavra_procurar);
-        console.log(palavra_trocar);
         texto = replaceAll(texto, palavra_procurar, palavra_trocar);
-        console.log(texto);
     }
     return texto;
 }
