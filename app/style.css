@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif !important;
 }
 
 /* Colors variables */
@@ -14,6 +14,7 @@
   --text-darkblue: #0A3871;
   --text-white: #fff;
   --text-gray400: #495057;
+  --text-red: red;
 
   --btn-grey: #D8DFE8;
   --btn-darkblue: #0A3871;
@@ -60,11 +61,12 @@ body {
   border: 0px;
   background-color: var(--bg-lightblue);
   height: 48px;
-  font-weight: 400;
+  font-weight: bold;
   line-height: 48px;
   font-size: 20px;
-  color: var(--text-darkblue);
+  color: var(--text-darkblue) !important; 
 }
+
 
 .painel .user-section input:focus {
   outline: none;
@@ -75,7 +77,8 @@ body {
   flex-direction: column;
   justify-content: start;
   justify-items: stretch;
-  text-align: center;
+  text-align: start;
+  padding: 2em;
 }
 
 .painel .info-section > * {
@@ -92,6 +95,8 @@ body {
 .painel .empty{
   display: flex;
   justify-content: center !important;
+  text-align: center !important;
+  padding: 0;
 }
 
 .box-tip{
@@ -114,13 +119,26 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0.5em;
+}
+
+.btn-small{
+  display: block;
+  width: 10%;
+  height: 35px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  background-color: white;
+  color: var(--text-red) !important; 
+  border: 1px solid var(--text-red) !important; 
 }
 
 .btn{
   display: block;
   width: 48%;
   height: 65px;
-  font-weight: 400;
+  font-weight: 500;
+  font-size: 1.1rem;
 }
 
 #btn-codificar{
@@ -144,4 +162,11 @@ body {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   background-color: #FFF;
   border-radius: 5px;
+}
+
+
+/* funcionalidades */
+
+.hide{
+  display: none;
 }

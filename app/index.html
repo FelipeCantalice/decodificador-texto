@@ -25,7 +25,7 @@
 
         <div class="user-section">
 
-            <input type="text" id="texto" placeholder="Digite o texto" maxlength="100">
+            <input type="text" id="texto" placeholder="Digite seu texto" maxlength="100">
 
             <div>
 
@@ -38,6 +38,10 @@
                     <button id="btn-codificar" class="btn border">Codificar</button>
                     <button id="btn-decodificar" class="btn border">Decodificar</button>
                 </div>
+
+                <div>
+                    <button id="btn-limpar" class="btn-small border">Limpar</button>
+                </div>
             </div>
 
         </div>
@@ -46,15 +50,12 @@
 
             <div class="empty-message">
                 <img src="assets/people.svg" alt="" width="100" />
-
                 <h3>
                     Nenhuma mensagem encontrada
                 </h3>
-
-
             </div>
 
-            <p class="info-text">
+            <p id="info-text" class="info-text">
                 Digite um texto que você deseja criptografar ou descriptografar.
             </p>
 
