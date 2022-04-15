@@ -37,7 +37,7 @@ function replaceAll(str, find, replace) {
 function decriptografar(texto = new String()) {
 
     for (let index = 0; index < 5; index++) {
-        
+
         const palavra_procurar = Object.keys(DECRIPT_WORDS)[index];
         const palavra_trocar = DECRIPT_WORDS[palavra_procurar]
         texto = replaceAll(texto, palavra_procurar, palavra_trocar);
@@ -61,7 +61,7 @@ button_cript.addEventListener('click', function () {
     }
     if (texto.match(caracter_uppercases) != null) {
         alert('Por favor!\nDigite apenas letras minúsculas.');
-        return 
+        return
     }
 
 
@@ -92,7 +92,7 @@ button_decript.addEventListener('click', function () {
     }
     if (texto.match(caracter_uppercases) != null) {
         alert('Por favor!\nDigite apenas letras minúsculas.');
-        return 
+        return
     }
 
 
@@ -116,8 +116,27 @@ button_clean.addEventListener('click', function () {
     document.querySelector('.info-section').classList.add('empty');
     document.querySelector('.empty-message').classList.remove('hide');
     document.querySelector('#info-text').innerHTML = 'Digite um texto que você deseja criptografar ou descriptografar.';
-    
+
 });
+
+
+// copy on click
+function copyOnClick(element) {
+    element.addEventListener('click', () => {
+        const textToCopy = element.innerText
+
+        navigator.clipboard.writeText(textToCopy).then(
+            function () {
+                window.alert('Texto copiado com sucesso!');
+            },
+            function () {
+                window.alert('Erro ao copiar texto!');
+            }
+        )
+    });
+}
+const textToCopy = document.querySelector('.info-text')
+copyOnClick(textToCopy)
 
 
 

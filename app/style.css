@@ -104,6 +104,7 @@ body {
 
 .painel .empty .info-text {
   font-size: 0.9rem !important;
+  pointer-events:none;
 }
 
 .box-tip{
