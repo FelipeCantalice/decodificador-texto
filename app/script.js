@@ -21,3 +21,24 @@ function criptografar(texto = new String()) {
 
 const teste = 'gato'
 console.log(criptografar(teste))
+
+
+
+const button_cript = document.querySelector('#btn-codificar');
+
+button_cript.addEventListener('click', function () {
+    const texto = document.querySelector('#texto').value;
+    const texto_criptografado = criptografar(texto);
+    document.querySelector('.info-section').classList.remove('empty');
+    document.querySelector('.empty-message').classList.add('hide');
+    document.querySelector('#info-text').innerHTML = texto_criptografado;
+});
+
+const button_clean = document.querySelector('#btn-limpar');
+
+button_clean.addEventListener('click', function () {
+    document.querySelector('#texto').value = '';
+    document.querySelector('.info-section').classList.add('empty');
+    document.querySelector('.empty-message').classList.remove('hide');
+    document.querySelector('#info-text').innerHTML = 'Digite um texto que você deseja criptografar ou descriptografar.';
+});
