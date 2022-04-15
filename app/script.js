@@ -73,7 +73,10 @@ button_cript.addEventListener('click', function () {
     // atualizar DOM com o texto criptografado
     document.querySelector('.info-section').classList.remove('empty');
     document.querySelector('.empty-message').classList.add('hide');
-    document.querySelector('#info-text').innerHTML = texto_criptografado;
+
+    const textElement = document.querySelector('#info-text');
+    textElement.innerHTML = texto_criptografado;
+    replayCSSAnimation(textElement, 'fade-in');
 });
 
 
@@ -101,15 +104,31 @@ button_decript.addEventListener('click', function () {
     // atualizar DOM com o texto criptografado
     document.querySelector('.info-section').classList.remove('empty');
     document.querySelector('.empty-message').classList.add('hide');
-    document.querySelector('#info-text').innerHTML = texto_descriptografado;
+
+    const textElement = document.querySelector('#info-text');
+    textElement.innerHTML = texto_descriptografado;
+    replayCSSAnimation(textElement, 'fade-in');
 });
 
 
 const button_clean = document.querySelector('#btn-limpar');
 
 button_clean.addEventListener('click', function () {
+    replayCSSAnimation(document.querySelector('body'), 'blink');
     document.querySelector('#texto').value = '';
     document.querySelector('.info-section').classList.add('empty');
     document.querySelector('.empty-message').classList.remove('hide');
     document.querySelector('#info-text').innerHTML = 'Digite um texto que você deseja criptografar ou descriptografar.';
+    
 });
+
+
+
+// others
+function replayCSSAnimation(element, animationName) {
+    element.classList.add('animated', animationName);
+    // When the animation ends, clean the classes added in the animation
+    element.addEventListener('animationend', function () {
+        element.classList.remove('animated', animationName);
+    });
+}

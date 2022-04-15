@@ -20,6 +20,8 @@
   --btn-darkblue: #0A3871;
 }
 
+
+
 body {
   background-color: var(--bg-lightblue);
 }
@@ -86,9 +88,9 @@ body {
 }
 
 .painel .info-section .info-text {
-  font-size: 0.9rem;
+  font-size: 1.4rem;
   color: var(--text-gray400);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 20px;
 }
 
@@ -96,7 +98,12 @@ body {
   display: flex;
   justify-content: center !important;
   text-align: center !important;
+  
   padding: 0;
+}
+
+.painel .empty .info-text {
+  font-size: 0.9rem !important;
 }
 
 .box-tip{
