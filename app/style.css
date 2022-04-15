@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-lightblue: #F3F5FC;
+  --bg-darkblue: #0A3871;
+
+  --text-darkblue: #0A3871;
+  --text-white: #fff;
+  --text-gray400: #495057;
+
+  --btn-grey: #D8DFE8;
+  --btn-darkblue: #0A3871;
+}
