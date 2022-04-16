@@ -133,6 +133,7 @@ body {
 .btn-small{
   display: block;
   width: 10%;
+  min-width: 100px;
   height: 35px;
   font-weight: bold;
   font-size: 0.8rem;
@@ -177,4 +178,39 @@ body {
 
 .hide{
   display: none;
+}
+
+
+/* RES */
+@media (max-width: 1168px) {
+  .painel {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .painel .logo-section{
+    display: flex;
+    flex: 1;
+    justify-content: start;
+  }
+
+  .painel .user-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 0em;
+    height: 100%;
+  }
+
+  .painel .info-section{
+    display: flex !important;
+    justify-content: space-around;
+    padding: 0.7em;
+    word-wrap: break-word;
+  }
+
+  .painel .info-section #empty-image{
+    display: none;
+  }
+
 }
